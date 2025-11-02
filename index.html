@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      WellnessSpace - Free Mental Health Support for Indian Students
+    </title>
+    <meta
+      name="description"
+      content="Completely FREE mental health platform for Indian students. 24/7 crisis support (KIRAN 1800-599-0019), counseling, peer community, and wellness resources. Academic stress, family pressure, career guidance - all confidential."
+    />
+    <meta name="author" content="WellnessSpace" />
+    <meta
+      name="keywords"
+      content="Indian student mental health, free counseling, KIRAN helpline, academic stress, exam anxiety, family pressure, career guidance, student wellness, board exam stress, college support"
+    />
+
+    <meta
+      property="og:title"
+      content="WellnessSpace - Free Mental Health Support for Indian Students"
+    />
+    <meta
+      property="og:description"
+      content="Completely FREE platform for Indian students. Crisis support via KIRAN helpline, professional counseling, and peer community for academic stress and family pressure."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://lovable.dev/opengraph-image-p98pqg.png"
+    />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@lovable_dev" />
+    <meta
+      name="twitter:image"
+      content="https://lovable.dev/opengraph-image-p98pqg.png"
+    />
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+
+    <!-- Botpress Chatbot Integration -->
+    <script
+      src="https://cdn.botpress.cloud/webchat/v3.3/inject.js"
+      defer
+    ></script>
+    <script
+      src="https://files.bpcontent.cloud/2025/09/29/05/20250929054130-O3MVTL53.js"
+      defer
+    ></script>
+
+    <!-- Botpress Initialization -->
+    <script>
+      window.addEventListener("load", function () {
+        // Wait for Botpress to be available
+        if (window.botpress) {
+          console.log("Botpress chatbot loaded successfully");
+        } else {
+          console.log("Waiting for Botpress to load...");
+          setTimeout(() => {
+            if (window.botpress) {
+              console.log("Botpress chatbot loaded after delay");
+            } else {
+              console.error("Botpress failed to load");
+            }
+          }, 2000);
+        }
+      });
+    </script>
+  </body>
+</html>

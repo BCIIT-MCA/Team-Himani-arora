@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "allowJs": true,
+    "checkJs": false,
+    "strict": false,
+    "noImplicitAny": false,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "types": [],
+    "typeRoots": [],
+    "baseUrl": ".",
+    "paths": {
+      "@shared/types": ["./_shared/types.ts"],
+      "@supabase/supabase-js": ["node_modules/@supabase/supabase-js"],
+      "@google/generative-ai": ["node_modules/@google/generative-ai"],
+      "https://deno.land/std@*/http/server.ts": [
+        "./node_modules/@types/deno/http/server.d.ts"
+      ],
+      "https://esm.sh/*": ["./node_modules/@types/esm/*"]
+    }
+  },
+  "include": ["**/*.ts", "**/*.js", "_shared/deno-types.d.ts"],
+  "exclude": ["node_modules", "dist"]
+}

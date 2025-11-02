@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Mental Health Support System Design Tokens */
+
+@layer base {
+  :root {
+    /* Primary Colors - Calming Mental Health Palette */
+    --primary: 233 73% 71%;          /* #6B73FF - Soft purple */
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 239 77% 85%;     /* Lighter version for glows */
+    
+    --secondary: 252 77% 77%;        /* #9C88FF - Lavender */
+    --secondary-foreground: 0 0% 100%;
+    
+    --accent: 0 100% 85%;            /* #FFB4B4 - Soft pink */
+    --accent-foreground: 217 91% 24%;
+    
+    --wellness: 225 100% 98%;        /* #F8F9FF - Very light blue background */
+    --wellness-foreground: 217 91% 24%;
+    
+    --background: 225 100% 98%;
+    --foreground: 217 91% 24%;       /* #2D3748 - Dark gray */
+
+    /* Supporting Colors */
+    --card: 0 0% 100%;
+    --card-foreground: 217 91% 24%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 217 91% 24%;
+    
+    --muted: 225 50% 96%;
+    --muted-foreground: 215 16% 47%;
+    
+    --border: 220 27% 94%;
+    --input: 220 27% 94%;
+    --ring: 233 73% 71%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --success: 120 60% 50%;
+    --success-foreground: 0 0% 100%;
+    
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    
+    /* Gradients for wellness design */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+    --gradient-wellness: linear-gradient(180deg, hsl(var(--wellness)), hsl(var(--card)));
+    --gradient-soft: linear-gradient(135deg, hsl(var(--primary-glow)), hsl(var(--accent)));
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(var(--primary) / 0.15);
+    --shadow-glow: 0 0 30px hsl(var(--primary-glow) / 0.3);
+    --shadow-wellness: 0 2px 15px -3px hsl(var(--primary) / 0.1);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    
+    --radius: 1rem;
+  }
+
+  .dark {
+    --background: 217 91% 8%;
+    --foreground: 225 100% 98%;
+    
+    --primary: 233 73% 71%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 252 77% 77%;
+    --secondary-foreground: 0 0% 100%;
+    
+    --accent: 0 100% 85%;
+    --accent-foreground: 217 91% 24%;
+    
+    --card: 217 91% 12%;
+    --card-foreground: 225 100% 98%;
+    
+    --border: 217 32% 17%;
+    --input: 217 32% 17%;
+    --ring: 233 73% 71%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Open Sans', system-ui, sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', system-ui, sans-serif;
+    @apply font-medium;
+  }
+}
+
+@layer components {
+  /* Breathing animation for wellness elements */
+  .breathing {
+    animation: breathe 4s ease-in-out infinite;
+  }
+  
+  @keyframes breathe {
+    0%, 100% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.05); opacity: 1; }
+  }
+  
+  /* Gentle pulse for interactive elements */
+  .pulse-soft {
+    animation: pulse-soft 2s ease-in-out infinite;
+  }
+  
+  @keyframes pulse-soft {
+    0%, 100% { opacity: 0.9; }
+    50% { opacity: 1; }
+  }
+  
+  /* Wellness gradient backgrounds */
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .bg-gradient-wellness {
+    background: var(--gradient-wellness);
+  }
+  
+  .bg-gradient-soft {
+    background: var(--gradient-soft);
+  }
+  
+  /* Glass morphism effect */
+  .glass {
+    backdrop-filter: blur(12px);
+    background: hsl(var(--card) / 0.8);
+    border: 1px solid hsl(var(--border) / 0.3);
+  }
+  
+  /* Wellness shadows */
+  .shadow-wellness {
+    box-shadow: var(--shadow-wellness);
+  }
+  
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+}

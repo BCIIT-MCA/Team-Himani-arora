@@ -1,6 +1,6 @@
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
+import { Toaster } from "./components/ui/toaster";
+import { Toaster as Sonner } from "./components/ui/sonner";
+import { TooltipProvider } from "./components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
@@ -25,12 +25,16 @@ import {
 import { CrisisMonitoringProvider } from "./contexts/CrisisMonitoringContext";
 import { Suspense } from "react";
 import "./lib/i18n";
+import EmotionChatPage from './pages/EmotionChatPage';
+import EmotionChat from "./components/EmotionChat/EmotionChat";
+
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
+      <EmotionChat />
       <Toaster />
       <Sonner />
       <BrowserRouter>
@@ -67,6 +71,8 @@ const App = () => (
                     <Route path="/assessment" element={<AssessmentPage />} />
                     {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                     <Route path="*" element={<NotFound />} />
+                    <Route path="/emotion-chat" element={<EmotionChatPage />} />
+                    <Route path="/emotion-chat" element={<EmotionChat />} />
                   </Routes>
                 </GlobalNotificationsProvider>
               </CrisisMonitoringProvider>
